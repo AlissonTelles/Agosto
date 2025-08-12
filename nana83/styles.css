@@ -1,0 +1,257 @@
+:root {
+    --primary: #252566;
+    --primary-dark: #9c1391;
+    --success: #3735c0;
+    --success-dark: #0300a3;
+    --danger: #af0e0e;
+    --bg-color: #ffffff;
+    --text-color: #5a0707;
+    --light-gray: #0b006e;
+    --border-color: #a7a7a7;
+    --shadow: 0 8px 25px rgba(0, 0, 87, 0.973);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+h1,
+h2 {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2.2em;
+    color: var(--primary-dark);
+}
+
+h2 {
+    font-size: 1.5em;
+    color: var(--primary);
+}
+
+.container,
+.dashboard-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    max-width: 450px;
+    width: 100%;
+    padding: 40px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.dashboard-container {
+    max-width: 600px;
+}
+
+.auth-forms {
+    margin-top: 20px;
+}
+
+.form-toggle {
+    background: var(--light-gray);
+    border-radius: 8px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    display: flex;
+}
+
+.form-toggle button {
+    flex: 1;
+    padding: 12px 0;
+    border: none;
+    background: transparent;
+    color: #555;
+    font: 600 1.1em/1.2 sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.form-toggle button.active {
+    background: var(--primary);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1em;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+button[type="submit"],
+.logout-button {
+    width: 100%;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 6px;
+    font: 600 1.1em/1.2 sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+button[type="submit"] {
+    background: var(--success);
+    color: #fff;
+}
+
+button[type="submit"]:hover {
+    background: var(--success-dark);
+    transform: translateY(-1px);
+}
+
+.logout-button {
+    background: var(--danger);
+    color: #fff;
+}
+
+.logout-button:hover {
+    background-color: #af0e0e;
+}
+
+.message {
+    margin: 15px 0 0;
+    padding: 10px;
+    font-weight: 500;
+    text-align: center;
+    font-size: 0.95em;
+}
+
+.message.error {
+    background-color: bisque;
+    color: #af0e0e;
+    border: 1px solid #e97373;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.user-info p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #5a0707;
+}
+
+.user-info span {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.dashboard-options {
+    margin-top: 30px;
+    text-align: left;
+    border-top: 1px solid #f0f0f0;
+    padding: 20px 0 0 0;
+}
+
+.dashboard-container ul {
+    list-style: none;
+}
+
+.dashboard-container li {
+    margin-bottom: 10px;
+}
+
+.dashboard-options a {
+    display: block;
+    color: var(--primary);
+    text-decoration: none;
+    padding: 8px 0;
+    border-bottom: 1px dashed #f0f0f0;
+    transition: all 0.2s ease;
+}
+
+.dashboard-options a:hover {
+    color: var(--primary-dark);
+    border-bottom-color: var(--primary-dark);
+    margin-top: 30px;
+    width: auto;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 25px;
+        margin: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    .form-group label {
+        font-size: 1.9em;
+    }
+
+    .form-group input {
+        padding: 10px;
+    }
+
+    button[type="submit"],
+    .logout-button {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+
+    .dashboard-container {
+        padding: 30px;
+    }
+}

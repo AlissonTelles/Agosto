@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login / Cadastro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo!</h1>
+        <div class="auth-forms">
+            <div class="form-toggle">
+                <button id="show-login-btn" class="active">Login</button>
+                <button id="show-register-btn">Cadastro</button>
+            </div>
+            <form id="login-form">
+                <h2>Entrar</h2>
+                <div class="form-group">
+                    <label for="login-username">Nome de usuário:</label>
+                    <input type="text" id="login-username" autocomplete="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Senha:</label>
+                    <div style="position:relative;">
+                      <input type="password" id="login-password" autocomplete="current-password" required>
+                      <button type="button" aria-label="Mostrar senha" id="toggle-login-password">👁</button>
+                    </div>
+                </div>
+                <button type="submit">Entrar</button>
+                <p id="login-message" class="message error"></p>
+            </form>
+            <form id="register-form" class="hidden">
+                <h2>Cadastrar-se</h2>
+                <div class="form-group">
+                    <label for="register-username">Nome de Usuário:</label>
+                    <input type="text" id="register-username" autocomplete="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Senha:</label>
+                    <div style="position:relative;">
+                      <input type="password" id="register-password" autocomplete="new-password" minlength="8" required>
+                      <button type="button" aria-label="Mostrar senha" id="toggle-register-password">👁</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">E-mail:</label>
+                    <input type="email" id="register-email" autocomplete="email" required>
+                </div>
+                <button type="submit">Cadastrar</button>
+                <p id="register-message" class="message error"></p>
+            </form>
+        </div>
+    </div>
+        <script src="Principal.js"></script>
+        <script>
+            // Mostrar/ocultar senha login
+            document.addEventListener('DOMContentLoaded', function() {
+                const toggleLogin = document.getElementById('toggle-login-password');
+                const loginPassword = document.getElementById('login-password');
+                if (toggleLogin && loginPassword) {
+                    toggleLogin.addEventListener('click', function() {
+                        loginPassword.type = loginPassword.type === 'password' ? 'text' : 'password';
+                        toggleLogin.setAttribute('aria-label', loginPassword.type === 'password' ? 'Mostrar senha' : 'Ocultar senha');
+                    });
+                }
+                const toggleRegister = document.getElementById('toggle-register-password');
+                const registerPassword = document.getElementById('register-password');
+                if (toggleRegister && registerPassword) {
+                    toggleRegister.addEventListener('click', function() {
+                        registerPassword.type = registerPassword.type === 'password' ? 'text' : 'password';
+                        toggleRegister.setAttribute('aria-label', registerPassword.type === 'password' ? 'Mostrar senha' : 'Ocultar senha');
+                    });
+                }
+            });
+        </script>
+</body>
+</html>

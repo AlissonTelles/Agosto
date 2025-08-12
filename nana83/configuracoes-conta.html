@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurações da Conta</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container dashboard-container">
+    <header class="dashboard-header">
+      <h1>Configurações da Conta</h1>
+      <a href="ver-perfil.html" class="logout-button">Voltar ao Perfil</a>
+    </header>
+
+    <main class="user-dashboard">
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="idioma">Idioma</label>
+          <select id="idioma" name="idioma">
+            <option value="portugues">Português</option>
+            <option value="ingles">Inglês</option>
+            <option value="hindi">Hindi</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="notificacoes">Notificações</label>
+          <input type="checkbox" id="notificacoes" name="notificacoes" checked>
+          <label for="notificacoes">Receber notificações por e-mail</label>
+        </div>
+        <div class="form-group">
+          <label for="privacidade">Privacidade</label>
+          <select id="privacidade" name="privacidade">
+            <option value="publico">Público</option>
+            <option value="privado">Privado</option>
+          </select>
+        </div>
+        <button type="submit">Salvar Configurações</button>
+      </form>
+    </main>
+  </div>
+</body>
+</html>
