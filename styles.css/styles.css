@@ -132,10 +132,11 @@ h2 {
     gap: 12px;
     margin-top: 10px;
 }
+/* Botão de ação */
 .action-button {
     background: #393e46;
-    color: #aaff82;
-    border: 2px solid #9bff82;
+    color: #ffe082;
+    border: 2px solid #ffe082;
     font-weight: 700;
     border-radius: 8px;
     padding: 12px 25px;
@@ -149,6 +150,7 @@ h2 {
     box-shadow: 0 4px 16px #ffe08233;
     background: #232526;
 }
+/* Estado desabilitado do botão */
 .action-button:disabled {
     background-color: #232526;
     color: #393e46;
@@ -156,26 +158,7 @@ h2 {
     transform: none;
     box-shadow: none;
 }
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(35, 37, 38, 0.85);
-    justify-content: center;
-    align-items: center;
-}
-.action-button:disabled {
-    background-color: #232526;
-    color: #393e46;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
-}
+/* Modal (removido duplicidade) */
 .modal {
     display: none;
     position: fixed;
