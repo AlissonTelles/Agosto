@@ -1,0 +1,261 @@
+body {
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffe082;
+}
+.game-container {
+    background: linear-gradient(135deg, #232526 0%, #393e46 100%);
+    border-radius: 32px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+    padding: 40px 32px 32px 32px;
+    text-align: center;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    border: none;
+}
+h1 {
+    color: #ffe082;
+    letter-spacing: 2px;
+    font-weight: 900;
+    margin-bottom: 25px;
+    font-size: 2.2em;
+    text-shadow: 1px 1px 3px #0008;
+}
+h2 {
+    color: #b2c9df;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    border-bottom: 2px solid #ffe082;
+    padding-bottom: 5px;
+    width: 100%;
+}
+.pet-display-area {
+    margin-bottom: 0;
+    background: #232526;
+    border-radius: 50%;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+    padding: 18px;
+    margin-top: -70px;
+}
+.pet-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 6px solid #ffe082;
+    object-fit: cover;
+    box-shadow: 0 0 15px #0006;
+    transition: transform 0.2s;
+    align-items: center;
+}
+#pet-image:hover {
+    transform: scale(1.05);
+}
+.pet-name {
+    color: #ffe082;
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.status-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    background: #2c2f34;
+    border-radius: 18px;
+    padding: 18px 12px 10px 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+.status-bar-group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 2px;
+}
+.status-bar-group label {
+    color: #ffe082;
+    font-size: 1.1em;
+    font-weight: 700;
+    min-width: 80px;
+    text-align: right;
+}
+.bar-container {
+    flex-grow: 1;
+    background-color: #393e46;
+    border-radius: 14px;
+    height: 22px;
+    overflow: hidden;
+    position: relative;
+    border: 1.5px solid #ffe082;
+}
+.status-bar {
+    height: 100%;
+    width: 100%;
+    transition: width 0.5s, background-color 0.5s;
+    border-radius: 14px;
+}
+.status-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffe082;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px #000a;
+    font-size: 0.95em;
+}
+.hunger-bar {background: linear-gradient(90deg, #ff8c6b 0%, #b24592 100%);}
+.happiness-bar {background: linear-gradient(90deg, #ffe082 0%, #f7a072 100%);}
+.energy-bar {background: linear-gradient(90deg, #7ec4cf 0%, #393e46 100%);}
+.hygiene-bar {background: linear-gradient(90deg, #b2c9df 0%, #232526 100%);}
+.actions-section {
+    width: 100%;
+    margin-top: 10px;
+}
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 10px;
+}
+.action-button {
+    background: #393e46;
+    color: #aaff82;
+    border: 2px solid #9bff82;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+    box-shadow: 0 4px 8px #0002;
+}
+.action-button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 16px #ffe08233;
+    background: #232526;
+}
+.action-button:disabled {
+    background-color: #232526;
+    color: #393e46;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(35, 37, 38, 0.85);
+    justify-content: center;
+    align-items: center;
+}
+.action-button:disabled {
+    background-color: #232526;
+    color: #393e46;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(35, 37, 38, 0.85);
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background-color: #232526;
+    border: 2px solid #ffe082;
+    margin: auto;
+    padding: 30px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px #000a;
+    position: relative;
+    text-align: center;
+    border-radius: 18px;
+}
+.modal-content p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #ffe082;
+}
+.modal-content .action-button {
+    background-color: #393e46;
+    color: #ffe082;
+    border: 2px solid #ffe082;
+    padding: 8px 20px;
+    font-size: 1em;
+    max-width: 100px;
+    margin: 0 auto;
+}
+@media (max-width: 600px) {
+    .game-container {
+        padding: 10px;
+        width: 99%;
+        gap: 10px;
+    }
+    h1 {
+     font-size: 1.5em;
+     color: #ffe082;
+    }
+    h2 {
+     font-size: 1.1em;
+     color: #b2c9df;
+    }
+    #pet-image {
+     width: 150px;
+     height: 150px;
+    }
+    .pet-name {
+     font-size: 1.5em;
+    }
+    .status-bar-group {
+     flex-direction: column;
+     align-items: flex-start;
+     gap: 5px;
+    }
+    .status-bar-group label {
+     width: 100%;
+     text-align: left;
+    }
+    .bar-container {
+     width: 100%;
+    }
+    .action-button {
+     width: 100%;
+     padding: 10px 15px;
+     font-size: 1em;
+    }
+    .modal-content {
+     padding: 20px;
+     width: 90%;
+    }
+}

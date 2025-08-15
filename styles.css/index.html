@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu pet virtual</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+
+
+  <main class="game-container">
+    <section class="pet-display-area" aria-label="Área do pet">
+      <img id="pet-image" class="pet-image"
+             src="1.jpg"
+           alt="Pet Virtual">
+      <p id="pet-name" class="pet-name">Roberto</p>
+    </section>
+
+    <section class="status-section" aria-labelledby="status-title">
+      <h2 id="status-title">Status do pet</h2>
+
+      <div class="status-bar-group">
+        <label>Fome:</label>
+        <div class="bar-container">
+          <div id="hunger-bar" class="status-bar hunger-bar"></div>
+          <span id="hunger-text" class="status-text">100%</span>
+        </div>
+      </div>
+
+      <div class="status-bar-group">
+        <label>Felicidade:</label>
+        <div class="bar-container">
+          <div id="happiness-bar" class="status-bar happiness-bar"></div>
+          <span id="happiness-text" class="status-text">100%</span>
+        </div>
+      </div>
+
+      <div class="status-bar-group">
+        <label>Energia:</label>
+        <div class="bar-container">
+          <div id="energy-bar" class="status-bar energy-bar"></div>
+          <span id="energy-text" class="status-text">100%</span>
+        </div>
+      </div>
+
+      <div class="status-bar-group">
+        <label>Higiene:</label>
+        <div class="bar-container">
+          <div id="hygiene-bar" class="status-bar hygiene-bar"></div>
+          <span id="hygiene-text" class="status-text">100%</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="actions-section" aria-labelledby="actions-title">
+      <h2 id="actions-title">Ações</h2>
+      <div class="action-buttons">
+                <button id="sell-btn" class="action-button">Vender</button>
+                <button id="feed-btn" class="action-button">Alimentar</button>
+                <button id="play-btn" class="action-button">Brincar</button>
+                <button id="sleep-btn" class="action-button">Dormir</button>
+                <button id="clean-btn" class="action-button">Limpar</button>
+                <button id="ignore-btn" class="action-button">Ignorar</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="mensagem-box" class="modal" role="dialog" aria-modal="true" aria-labelledby="mensagem-text">
+      <div class="modal-content">
+        <p id="message-text"></p>
+        <button id="close-message-btn" class="close-button">OK</button>
+      </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+<!-- Mensagem vendido, oculta por padrão -->
+<div id="vendido-msg" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:#232526cc;z-index:9999;align-items:center;justify-content:center;flex-direction:column;">
+  <h1 style="color:#ffe082;font-size:3em;text-align:center;">VENDIDO</h1>
+</div>
+</body>
+</html>
