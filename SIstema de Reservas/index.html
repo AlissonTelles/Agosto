@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de reservas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="clock-fixed" id="clock-fixed"></div>
+    <main class="container">
+        <header>
+            <h1>Sistema de reservas</h1>
+        </header>
+
+        <section class="event-info-section section" aria-labelledby="event-title">
+            <h2 id="event-title">Noite de Jazz no Centro Cultural</h2>
+            <p id="event-description">Uma experiência musical relaxante com os melhores artistas locais. Vagas limitadas!</p>
+        </section>
+
+        <section class="time-slot-section section" aria-labelledby="time-slots-title">
+            <h2 id="time-slots-title">Horários disponíveis</h2>
+            <div id="time-slots-container" class="time-slots-container" role="list">
+            </div>
+        </section>
+
+        <section class="seat-selection-section section" aria-labelledby="seat-selection-title">
+            <h2 id="seat-selection-title">
+                Seleção de assentos <span id="selected-time-display"></span>
+            </h2>
+
+            <div class="screen" aria-hidden="true">Palco / Ecrã</div>
+
+            <div class="seat-selection-container">
+                <div id="seats-grid" class="seats-grid" role="grid" aria-label="Mapa de assentos"></div>
+
+                <aside class="legend">
+                    <div class="legend-item">
+                        <span class="seat available" aria-hidden="true"></span>
+                        <span>Disponível</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="seat selected" aria-hidden="true"></span>
+                        <span>Selecionado</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="seat reserved" aria-hidden="true"></span>
+                        <span>Reservado</span>
+                    </div>
+                </aside>
+
+                <div class="selected-seats-info">
+                    <h3>Assentos selecionados: <span id="selected-seats-display">Nenhuma</span></h3>
+                    <p id="total-price-display">Preço total: R$ 0,00</p>
+                </div>
+
+                <div class="actions-buttons">
+                    <button id="clear-selection-btn" class="action-button secondary" aria-label="Limpar seleção de assentos">Limpar seleção</button>
+                    <button id="reserve-btn" class="action-button primary" aria-label="Confirmar reserva">Reservar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="message-box" class="modal" role="dialog" aria-labelledby="message-text" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close" id="close-x-btn" aria-label="Fechar janela">&times;</button>
+            <p id="message-text"></p>
+            <button id="close-message-btn" class="action-button">Ok</button>
+        </div>
+    </div>
+
+    <script src="J.js"></script>
+    <script>
+    // Relógio digital fixo
+    function updateClock() {
+        const clock = document.getElementById('clock-fixed');
+        if (!clock) return;
+        const now = new Date();
+        const h = String(now.getHours()).padStart(2, '0');
+        const m = String(now.getMinutes()).padStart(2, '0');
+        const s = String(now.getSeconds()).padStart(2, '0');
+        clock.textContent = `${h}:${m}:${s}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+    </script>
+</body>
+</html>
